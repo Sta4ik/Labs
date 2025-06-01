@@ -1,0 +1,9 @@
+{
+    "cmake.generator": "Unix Makefiles",
+    "files.associations": {
+        "stdexcept": "cpp",
+        "iostream": "cpp",
+        "cctype": "cpp",
+        "limits": "cpp"
+    }
+}
