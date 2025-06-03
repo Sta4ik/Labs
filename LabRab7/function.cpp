@@ -79,12 +79,12 @@ std::string ProcessString(const std::string& input)
 {
     if (input.empty()) 
     {
-        throw std::runtime_error("Ошибка: введена пустая строка.");
+        throw std::runtime_error("Введена пустая строка.");
     }
 
     if (IsOnlyDelimetrs(input)) 
     {
-        throw std::runtime_error("Ошибка: строка содержит только знаки препинания.");
+        throw std::runtime_error("Строка содержит только знаки препинания.");
     }
 
     std::string cleaned = CleanDelimetrs(input); 

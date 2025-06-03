@@ -8,17 +8,17 @@ bool CheckInputFile(std::ifstream& fin)
 {
     if(!fin.good()) 
     {
-        throw "Ошибка: Файл не существует. \n";
+        throw "Файл не существует. \n";
     }
 
     if(!fin) 
     {
-        throw "Ошибка: Ошибка входного файла. \n";
+        throw "Ошибка входного файла. \n";
     }
 
     if(fin.peek() == EOF) 
     {
-        throw "Ошибка: Файл пуст. \n";
+        throw "Файл пуст. \n";
     }
 
     return true;
@@ -28,12 +28,12 @@ bool CheckOutputFile(std::ofstream& fout)
 {
     if(!fout.good()) 
     {
-        throw "Ошибка: Файл не существует. \n";
+        throw "Файл не существует. \n";
     }
 
     if(!fout) 
     {
-        throw "Ошибка: Ошибка выходного файла. \n";
+        throw "Ошибка выходного файла. \n";
     }
 
     return true;
@@ -77,7 +77,7 @@ int64_t CountNumbersInFile(std::ifstream& fin)
 
     if (count == 0) 
     {
-        throw std::runtime_error("Ошибка: В файле отсутствуют числовые данные.");
+        throw std::runtime_error("В файле отсутствуют числовые данные.");
     }
 
     fin.clear();
@@ -102,7 +102,7 @@ int32_t InputSwitcher()
     std::cin >> switcher;
     if(std::cin.fail() || (switcher != 0 && switcher != 1))
     {
-        throw std::invalid_argument("Ошибка: неверный аргумент. Ожидается число от 0 до 1.");
+        throw std::invalid_argument("Неверный аргумент. Ожидается число от 0 до 1.");
     }
 
     return switcher;
@@ -116,7 +116,7 @@ int32_t InputSortType()
 
     if(std::cin.fail() || sortType < 1 || sortType > 6) 
     {
-        throw std::invalid_argument("Ошибка: неверный аргумент. Ожидается число от 1 до 6.");
+        throw std::invalid_argument("Неверный аргумент. Ожидается число от 1 до 6.");
     }
 
     return sortType;
@@ -130,7 +130,7 @@ int32_t InputInputType()
 
     if(std::cin.fail() || inputType < 1 || inputType > 4) 
     {
-        throw std::invalid_argument("Ошибка: неверный аргумент. Ожидается число от 1 до 4.");
+        throw std::invalid_argument("Неверный аргумент. Ожидается число от 1 до 4.");
     }
 
     return inputType;
@@ -144,7 +144,7 @@ size_t InputSize()
 
     if(std::cin.fail() || size < 0) 
     {
-        throw std::invalid_argument("Ошибка: неверный аргумент. Ожидается число > 0.");
+        throw std::invalid_argument("Неверный аргумент. Ожидается число > 0.");
     }
 
     return size;
@@ -158,7 +158,7 @@ double* FillArrayConsole(double* arr, size_t size)
 
         if(std::cin.fail()) 
         {
-            throw std::invalid_argument("Ошибка: неверный аргумент. Ожидается число.");
+            throw std::invalid_argument("Неверный аргумент. Ожидается число.");
         }
     }
 
@@ -213,7 +213,7 @@ double* SortArray(double* arr, size_t size)
         }
         default:
         {
-            throw std::runtime_error("Ошибка: Неверный тип сортировки.\n");
+            throw std::runtime_error("Неверный тип сортировки.\n");
             break;
         }
     }
@@ -243,7 +243,7 @@ size_t CountStudentInFile(std::ifstream& fin)
 
     if(count == 0) 
     {
-        throw std::runtime_error("Ошибка: файл пусь.");
+        throw std::runtime_error("Файл пусь.");
     }
 
     fin.clear();
@@ -262,20 +262,20 @@ void FillStudentsFromFile(std::ifstream& fin, Student* students, size_t size)
     {
         if (!std::getline(fin, line)) 
         {
-            throw std::runtime_error("Ошибка: Недостаточно строк в файле.");
+            throw std::runtime_error("Недостаточно строк в файле.");
         }
 
         std::istringstream ss(line);
         if (!(ss >> students[i].name >> students[i].surName >> students[i].course >> students[i].group)) 
         {
-            throw std::runtime_error("Ошибка: Некорректный формат данных студента.");
+            throw std::runtime_error("Некорректный формат данных студента.");
         }
 
         for (size_t j = 0; j < 5; ++j) 
         {
             if (!(ss >> students[i].marks[j])) 
             {
-                throw std::runtime_error("Ошибка: Некорректные оценки.");
+                throw std::runtime_error("Некорректные оценки.");
             }
         }
     }

@@ -80,15 +80,14 @@ int main()
         }
         default:
         {
-            throw std::runtime_error("Ошибка: Неверный вид ввода/вывода.\n");
+            throw std::runtime_error("Неверный вид ввода/вывода.\n");
             break;
         }
     }
     }
     catch (const std::exception& e)
     {
-        std::cerr << e.what() << std::endl;
-        return 1;
+        std::cerr << "Ошибка: " << e.what() << '/n';
     }
 
     return 0;

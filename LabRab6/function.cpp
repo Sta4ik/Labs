@@ -27,7 +27,8 @@ bool ContainsOnlyDelimiters(const char* str, const char* delim)
 
 void ExtractVowelWords(char* str, const char* delim, char* result) 
 {
-    if(strlen(str) == 0 || strlen(delim) == 0) 
+    size_t size = strlen(str);
+    for (size_t i = 0; i < size; ++i)
     {
         throw std::invalid_argument("Null pointer passed as argument");
     }
