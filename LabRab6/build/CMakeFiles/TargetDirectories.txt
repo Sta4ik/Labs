@@ -1,3 +1,0 @@
-/home/stanislav/LabRab6/build/CMakeFiles/app.dir
-/home/stanislav/LabRab6/build/CMakeFiles/edit_cache.dir
-/home/stanislav/LabRab6/build/CMakeFiles/rebuild_cache.dir
