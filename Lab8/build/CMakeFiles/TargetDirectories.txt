@@ -1,3 +1,0 @@
-/home/stanislav/Lab8/build/CMakeFiles/app.dir
-/home/stanislav/Lab8/build/CMakeFiles/edit_cache.dir
-/home/stanislav/Lab8/build/CMakeFiles/rebuild_cache.dir
