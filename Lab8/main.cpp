@@ -87,7 +87,7 @@ int main()
     }
     catch (const std::exception& e)
     {
-        std::cerr << "Ошибка: " << e.what() << '/n';
+        std::cerr << "Ошибка: " << e.what() << '\n';
     }
 
     return 0;

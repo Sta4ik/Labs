@@ -8,17 +8,17 @@ bool CheckInputFile(std::ifstream& fin)
 {
     if(!fin.good()) 
     {
-        throw "Файл не существует. \n";
+        throw std::runtime_error("Файл не существует. \n");
     }
 
     if(!fin) 
     {
-        throw "Ошибка входного файла. \n";
+        throw std::runtime_error("Ошибка входного файла. \n");
     }
 
     if(fin.peek() == EOF) 
     {
-        throw "Файл пуст. \n";
+        throw std::runtime_error("Файл пуст. \n");
     }
 
     return true;
@@ -28,12 +28,12 @@ bool CheckOutputFile(std::ofstream& fout)
 {
     if(!fout.good()) 
     {
-        throw "Файл не существует. \n";
+        throw std::runtime_error("Файл не существует. \n");
     }
 
     if(!fout) 
     {
-        throw "Ошибка выходного файла. \n";
+        throw std::runtime_error("Ошибка выходного файла. \n");
     }
 
     return true;
