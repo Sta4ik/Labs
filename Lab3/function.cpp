@@ -32,18 +32,20 @@ double* FillArray(int64_t size, double* arr)
     return arr;
 }
 
-double* FillArrayRandom(int64_t size, double* arr) {
-    double lowerBorder, upperBorder;
+double* FillArrayRandom(int64_t size, double* arr) 
+{
+    double lowerBorder{}; 
+    double upperBorder{};
     std::cout << "Введите границы интервала (например, 1 и 10): ";
     std::cin >> lowerBorder >> upperBorder;
 
-    if (lowerBorder > upperBorder) 
+    if(lowerBorder > upperBorder) 
     {
         throw std::invalid_argument("Неверные границы интервала.");
     }
     
     srand(time(nullptr));
-    for (size_t i = 0; i < size; ++i)
+    for(size_t i = 0; i < size; ++i)
     {
         arr[i] = lowerBorder + rand() % static_cast<int>(lowerBorder - upperBorder + 1);
     }
@@ -56,9 +58,9 @@ double FindMaxElement(int64_t size, double* arr)
 {
     double maxElement{arr[0]};
 
-    for (size_t i = 0; i < size; ++i) 
+    for(size_t i = 0; i < size; ++i) 
     {
-        if (abs(arr[i]) > abs(maxElement)) 
+        if(abs(arr[i]) > abs(maxElement)) 
         {
             maxElement = arr[i];
         }
@@ -279,9 +281,9 @@ int32_t InputInputType()
 
     std::cin >> inputType;
 
-    if(std::cin.fail() || inputType < 1 || inputType > 4) 
+    if(std::cin.fail() || inputType < 1 || inputType > 2) 
     {
-        throw std::invalid_argument("Неверный аргумент. Ожидается число от 1 до 4.");
+        throw std::invalid_argument("Неверный аргумент. Ожидается число от 1 до 2.");
     }
 
     return inputType;

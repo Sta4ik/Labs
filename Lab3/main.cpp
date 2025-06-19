@@ -13,10 +13,10 @@ int main()
         double* arr = new double[size];
 
         std::cout << "Выберите способ заполнения массива: \n 1. С клавиатуры \n 2. Случайными числами \n";
-        int32_t typeInput;
+        int32_t typeInput{};
         typeInput = InputInputType();
 
-        switch (typeInput)
+        switch(typeInput)
         {
         case 1:
         {
